@@ -1,0 +1,6 @@
+one:
+  title: "Ruby Programming Book"
+  description: "A comprehensive guide to Ruby programming language"
+  price: 49.99
+  created_at: <%= Time.now %>
+  updated_at: <%= Time.now %>
