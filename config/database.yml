@@ -10,14 +10,21 @@ default: &default
 development:
   <<: *default
   database: <%= ENV["PGDATABASE"] %>
-  username: <%= ENV["PGUSER"] %>
-  password: <%= ENV["PGPASSWORD"] %>
-  host: <%= ENV["PGHOST"] %>
-  port: <%= ENV.fetch("PGPORT", 5432) %>
-  encoding: utf8
-  pool: 5
-  timeout: 5000
 
 test:
   <<: *default
   database: depot_test
+
+production:
+  <<: *default
+  database: <%= ENV["PGDATABASE"] %>
+
+  # For Solid Queue
+  queue:
+    <<: *default
+    database: <%= ENV["PGDATABASE"] %>_queue
+
+  # For Solid Cable
+  cable:
+    <<: *default
+    database: <%= ENV["PGDATABASE"] %>_cable
