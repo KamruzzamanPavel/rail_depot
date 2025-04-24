@@ -2,14 +2,10 @@ default: &default
   adapter: postgresql
   encoding: unicode
   pool: <%= ENV.fetch("RAILS_MAX_THREADS", 5) %>
-  username: <%= ENV["PGUSER"] %>
-  password: <%= ENV["PGPASSWORD"] %>
-  host: <%= ENV["PGHOST"] %>
-  port: <%= ENV.fetch("PGPORT", 5432) %>
+  url: <%= ENV['DATABASE_URL'] %>
 
 development:
   <<: *default
-  database: <%= ENV["PGDATABASE"] %>
 
 test:
   <<: *default
@@ -17,14 +13,9 @@ test:
 
 production:
   <<: *default
-  database: <%= ENV["PGDATABASE"] %>
-
   # For Solid Queue
   queue:
     <<: *default
-    database: <%= ENV["PGDATABASE"] %>_queue
-
   # For Solid Cable
   cable:
     <<: *default
-    database: <%= ENV["PGDATABASE"] %>_cable
