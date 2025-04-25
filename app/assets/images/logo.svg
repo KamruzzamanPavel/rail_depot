@@ -1,0 +1,9 @@
+<svg viewBox="0 0 400 150" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background trapezoid shape -->
+  <polygon points="0,0 400,0 380,150 20,150" fill="#90d890" />
+  
+  <!-- Text in dark green -->
+  <text x="200" y="40" font-family="Georgia, serif" font-size="28" fill="#0e6b0e" text-anchor="middle" font-weight="normal">The</text>
+  <text x="200" y="85" font-family="Georgia, serif" font-size="38" fill="#0e6b0e" text-anchor="middle" font-weight="bold">Pragmatic</text>
+  <text x="200" y="130" font-family="Georgia, serif" font-size="32" fill="#0e6b0e" text-anchor="middle" font-weight="normal">Bookshelf</text>
+</svg>

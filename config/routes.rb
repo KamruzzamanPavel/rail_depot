@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :line_items
+  resources :carts
+  root "store#index" ,as: "store_index"
   devise_for :users
   resources :products
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
@@ -15,6 +18,6 @@ Rails.application.routes.draw do
   # 
   # config/routes.rb
 
-  root "products#index"
+  # root "articles#index"
 
 end
